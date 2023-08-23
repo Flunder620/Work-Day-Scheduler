@@ -57,8 +57,11 @@ textarea {
   font-size: 20px;
   transition: all 0.3s ease-in-out;
 }
-.notification{
+.notification {
   display:none;
   text-align: center;
   color: green;
+}
+.show {
+  display: block;
 }
