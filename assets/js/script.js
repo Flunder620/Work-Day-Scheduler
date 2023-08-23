@@ -8,7 +8,7 @@ $(document).ready(function () {
   // function? How can DOM traversal be used to get the "hour-x" id of the
   // time-block containing the button that was clicked? How might the id be
   // useful when saving the description in local storage?
-  $('.saveBtn').on('click', function(){
+  $('.saveBtn').on('click', function() {
     var task = $(this).siblings('description').val()
     var time = $(this).parent().attr('id')
     localStorage.setItem(time, value)
@@ -20,8 +20,24 @@ $(document).ready(function () {
   });
 
   function updateTime() {
-    
-  }
+    var currentHour = dayjs().hour()
+
+    $('.time-block').each(function(){
+      var divHour = parseInt($(this).attr('id').split('-')[1]);
+
+      if(divHour < currentHour){
+        $(this).addClass('past')
+      }
+      else if (divHour === currentHour) {
+        $(this).removeClass('past')
+        $(this).addClass('present')
+      }
+      else {
+        $(this).removeClass('past')
+        $(this).removeClass('present')
+        $(this).addClass('future')
+      }
+    })
 }
 
 
