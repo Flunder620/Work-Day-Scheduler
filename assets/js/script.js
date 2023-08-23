@@ -38,7 +38,14 @@ $(document).ready(function () {
         $(this).addClass('future')
       }
     })
-}
+  }
+  
+  updateTime();
+
+  setInterval(updateTime, 10000)
+
+  $('#currentDay').text(dayjs().format('MMMM  D, YYYY'));
+})
 
 
   // TODO: Add code to apply the past, present, or future class to each time
@@ -52,5 +59,4 @@ $(document).ready(function () {
   // attribute of each time-block be used to do this?
   //
   // TODO: Add code to display the current date in the header of the page.
-  // $('#currentDay').text(dayjs().format('MMMM  D, YYYY'));
   //Display current date
