@@ -2,7 +2,15 @@
 
 ## Description
 
-Made the page to display my portfolio. It features a section about me, previous work, and contact info.
+This application is used to play a typical work day. It's organized into hour blocks and color-coded for your convenience.
+
+## Installation
+
+Nothing to install the app should work fine on your browser.
+
+## Usage
+
+Typing into any of the hour blocks and clicking the save icon will save what is typed into localStorage. The color of the sections also determines if the hours has past, is the current hour, or is in the future.
 
 ## Mock-Up
 
