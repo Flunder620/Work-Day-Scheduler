@@ -9,25 +9,26 @@ $(document).ready(function () {
   // time-block containing the button that was clicked? How might the id be
   // useful when saving the description in local storage?
 
-  $('.saveBtn').on('click', function() {
-    var task = $(this).siblings('description').val()
+//saveing data when clicking save button
+  $('.saveBtn').on('click', function () {
+    var task = $(this).siblings('.description').val()
     var time = $(this).parent().attr('id')
     localStorage.setItem(time, task)
-    
+    //notification when saving 
     $('.notification').addClass('show')
-    
+    //notification goes away after 3 seconds
     setTimeout(function () {
       $('.notification').removeClass('show');
     }, 3000);
   });
-
+  //calculates time and adds classes to the time blocks depends on what time it is
   function updateTime() {
     var currentHour = dayjs().hour()
 
-    $('.time-block').each(function(){
+    $('.time-block').each(function () {
       var divHour = parseInt($(this).attr('id').split('-')[1]);
 
-      if(divHour < currentHour){
+      if (divHour < currentHour) {
         $(this).addClass('past')
       }
       else if (divHour === currentHour) {
@@ -41,11 +42,24 @@ $(document).ready(function () {
       }
     })
   }
-  
-  updateTime();
 
+  updateTime();
+  //sets a time on when to update the updateTime function
   setInterval(updateTime, 10000)
 
+
+  //retrives data from local storage
+  $('#hour-9 .description').val(localStorage.getItem('hour-9'));
+  $('#hour-10 .description').val(localStorage.getItem('hour-10'));
+  $('#hour-11 .description').val(localStorage.getItem('hour-11'));
+  $('#hour-12 .description').val(localStorage.getItem('hour-12'));
+  $('#hour-13 .description').val(localStorage.getItem('hour-13'));
+  $('#hour-14 .description').val(localStorage.getItem('hour-14'));
+  $('#hour-15 .description').val(localStorage.getItem('hour-15'));
+  $('#hour-16 .description').val(localStorage.getItem('hour-16'));
+  $('#hour-17 .description').val(localStorage.getItem('hour-17'));
+
+  //Display date
   $('#currentDay').text(dayjs().format('MMMM  D, YYYY'));
 })
 
