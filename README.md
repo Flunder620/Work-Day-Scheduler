@@ -15,7 +15,7 @@ Typing into any of the hour blocks and clicking the save icon will save what is 
 ## Mock-Up
 
 The following image shows the web application's appearance and functionality: 
-![This shows what home page will look like](./assets/PortfolioPreview.png)
+![This shows what home page will look like](./assets/images/project-preview.png)
 
 ## Deployment Link
 
