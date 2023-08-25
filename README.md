@@ -19,3 +19,4 @@ The following image shows the web application's appearance and functionality:
 
 ## Deployment Link
 
+https://flunder620.github.io/Work-Day-Scheduler/
